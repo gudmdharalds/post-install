@@ -27,9 +27,6 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 " >> /etc/profile										&& \
-# We dont really like the PC speaker beeeeeping,						\
-# so silence it											\
-echo "blacklist pcspkr" >> /etc/modprobe.d/fbdev-blacklist.conf					&& \ 
-# Add 'sbin' to everyone's PATH									\
+echo "blacklist pcspkr" >> /etc/modprobe.d/fbdev-blacklist.conf					&& \
 echo 'PATH="$PATH:/usr/sbin:/sbin:/usr/local/sbin"' >> /etc/profile				
 
