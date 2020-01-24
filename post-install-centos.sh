@@ -12,9 +12,9 @@ echo "blacklist pcspkr" >> /etc/modprobe.d/fbdev-blacklist.conf && \
 echo "root: gdh" >> /etc/aliases && \
 newalises && \
 echo 'PATH="$PATH:/usr/sbin:/sbin"' >> /etc/profile.d/gdh.conf && \
-echo "rm='rm -i'" >> /etc/profile.d/gdh.conf && \
-echo "cp='cp -i'" >> /etc/profile.d/gdh.conf && \
-echo "mv='mv -i'" >> /etc/profile.d/gdh.conf && \
+echo "alias rm='rm -i'" >> /etc/profile.d/gdh.conf && \
+echo "alias cp='cp -i'" >> /etc/profile.d/gdh.conf && \
+echo "alias mv='mv -i'" >> /etc/profile.d/gdh.conf && \
 echo '\S -- \l' > /etc/issue && \
 echo 'Kernel \r on an \m' >> /etc/issue
 
