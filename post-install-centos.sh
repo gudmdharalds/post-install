@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yum install -y vim nano acpid whois net-tools telnet epel-release keepass firefox pidgin hexchat thunderbird rsync xterm php yum-cron mutt git unzip zip tcpdump subversion dos2unix acpid jwhois screen && \
+yum install -y vim vim-enhanced nano acpid whois net-tools telnet epel-release keepass firefox pidgin hexchat thunderbird rsync xterm php yum-cron mutt git unzip zip tcpdump subversion dos2unix acpid jwhois screen dia bc dos2unix jwhois mutt nmap && \
 systemctl disable rpcbind && \
 systemctl disable rpcbind.socket && \
 systemctl disable cups && \
