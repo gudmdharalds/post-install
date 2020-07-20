@@ -1,1 +1,4 @@
 xterm*font:     *-fixed-*-*-*-20-*
+xterm*background: black
+xterm*foreground: lightgray
+
