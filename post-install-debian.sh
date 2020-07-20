@@ -3,7 +3,7 @@
 # Get APT updated, and install some 'essential' everyday tools
 apt-get update											&& \
 apt-get -y remove nfs-common rpcbind minissdpd							&& \
-apt-get -y install xbacklight vim wmaker cron-apt mutt xscreensaver subversion git icedove apt-transport-https dos2unix unzip zip tcpdump screen	&& \
+apt-get -y install xbacklight vim wmaker cron-apt mutt xscreensaver subversion git thunderbird apt-transport-https net-tools dos2unix unzip zip tcpdump screen gimp xterm	 && \
 # Make sure that the system automatically gets 							\
 # security updates every hour -- make sure root 						\
 # gets to know about it via email								\ 
