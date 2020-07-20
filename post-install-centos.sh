@@ -10,14 +10,21 @@ systemctl disable sshd && \
 systemctl set-default graphical.target && \
 echo "blacklist pcspkr" >> /etc/modprobe.d/fbdev-blacklist.conf && \
 echo "root: gdh" >> /etc/aliases && \
-newalises && \
+newaliases && \
+echo '#!/bin/bash' >> /usr/local/bin/batt.sh && \
+echo 'upower -i /org/freedesktop/UPower/devices/battery_BAT0 |grep percent' >> /usr/local/bin/batt.sh && \
+echo 'upower -i /org/freedesktop/UPower/devices/battery_BAT0 |grep state' >> /usr/local/bin/batt.sh && \
+echo 'upower -i /org/freedesktop/UPower/devices/battery_BAT0 |grep time' >> /usr/local/bin/batt.sh && \
+chmod 755 /usr/local/bin/batt.sh && \
 echo 'PATH="$PATH:/usr/sbin:/sbin"' >> /etc/profile.d/gdh.conf && \
+echo "alias acpi='/usr/local/bin/batt.sh'" >> /etc/profile.d/gdh.conf && \
 echo "alias rm='rm -i'" >> /etc/profile.d/gdh.conf && \
 echo "alias cp='cp -i'" >> /etc/profile.d/gdh.conf && \
 echo "alias mv='mv -i'" >> /etc/profile.d/gdh.conf && \
 echo '\S -- \l' > /etc/issue && \
-echo 'Kernel \r on an \m' >> /etc/issue
-
+echo 'Kernel \r on an \m' >> /etc/issue && \
+echo '0  *  *  *  * root systemctl disable rpcbind.socket' >> /etc/crontab && \
+echo '0  *  *  *  * root service rpcbind.socket stop 2>/dev/null' >> /etc/crontab
 
 # Also, for keyboard binding, run as non-privileged:
 # gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Alt>1']"
