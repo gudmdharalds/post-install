@@ -26,6 +26,9 @@ echo 'Kernel \r on an \m' >> /etc/issue && \
 echo '0  *  *  *  * root systemctl disable rpcbind.socket' >> /etc/crontab && \
 echo '0  *  *  *  * root service rpcbind.socket stop 2>/dev/null' >> /etc/crontab
 
+echo 'rfkill block bluetooth' >> /etc/rc.local && \
+chmod a+rx /etc/rc.local
+
 # Also, for keyboard binding, run as non-privileged:
 # gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Alt>1']"
 # gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Alt>2']"
